@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
-import TelaCadastro from './frontend/pages/Cadastro/telaCadastro';
+import TelaCadastro from './frontend/pages/Cadastro/TelaCadastro';
 
 
 export default function App() {
@@ -14,8 +14,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: 1,  
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
