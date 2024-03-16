@@ -1,13 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Logo from './frontend/components/Logos';
-import Inputs from './frontend/components/Inputs.js';
+import { StyleSheet, View } from 'react-native';
+import TelaCadastro from './frontend/pages/Cadastro/telaCadastro';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Logo/>
-      <Inputs/>
+      <TelaCadastro/>
       <StatusBar style="auto" />
     </View>
   );
