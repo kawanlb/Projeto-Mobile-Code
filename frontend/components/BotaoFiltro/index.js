@@ -1,32 +1,47 @@
-import {Pressable, Text, StyleSheet} from 'react-native';
+import { Text, Pressable, StyleSheet, Image } from 'react-native';
 
-const BotaoFiltro=({title})=>{
-    return(
-        <Pressable style={styles.botao}>
-            <Text style={styles.textoBotao}>{title}</Text>
+const BotaoFiltro = ({ title, img, isSelected, onPress }) => {
+    return (
+        <Pressable
+            style={[styles.botao, isSelected && styles.botaoSelecionado]}
+            onPress={onPress}
+        >
+            <Text style={[styles.textoBotao, isSelected && styles.textoBotaoSelecionado]}>{title}</Text>
+            {img && <Image style={styles.imagemBotao} source={img} />}
         </Pressable>
     )
 }
 
 const styles = StyleSheet.create({
-    botao:{
+    botao: {
         backgroundColor: '#F7F7F8',
         borderRadius: 18,
         shadowColor: '#000',
-        shadowOffset: {width: 0, height: 4},
-        shadowOpacity: 0.3,
-        shadowRadius: 2,
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.2,
+        shadowRadius: 4,
         elevation: 3,
-        paddingVertical: 20,
-        paddingHorizontal: 10,
-        margin: 8,
-        alignItems:'center'
+        height: 63,
+        width: 63,
+        margin: 7,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    textoBotao:{
+    botaoSelecionado: {
+        backgroundColor: '#0BACFE'
+    },
+    textoBotao: {
         fontFamily: 'Actor',
         fontSize: 18
+    },
+    textoBotaoSelecionado: {
+        color: 'white'
+    },
+    imagemBotao: {
+        marginTop: 5,
+        width: 28,
+        height: 28,
     }
-
 });
 
 export default BotaoFiltro;
