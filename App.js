@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Logo from './frontend/components/Logos';
 import Inputs from './frontend/components/Inputs.js';
-import Home from './frontend/screens/Home';
+import Home from './frontend/pages/Home/index.js';
 
 import * as Font from 'expo-font';
 
