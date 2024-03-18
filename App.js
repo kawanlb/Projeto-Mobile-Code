@@ -8,6 +8,8 @@ import React, { useCallback } from 'react';
 import GradientText from './frontend/components/GradientText';
 import LoginButton from './frontend/components/LoginButton';
 
+import { StyleSheet, View } from 'react-native';
+import TelaCadastro from './frontend/pages/Cadastro/TelaCadastro';
 
 
 export default function App() {
@@ -26,11 +28,8 @@ export default function App() {
     return null;
   }
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <Logo/>
-      <GradientText style={styles.text}>Amigo de quatro patas</GradientText>
-      <LoginButton></LoginButton>
-      <Inputs/>
+    <View style={styles.container}>
+      <TelaCadastro/>
       <StatusBar style="auto" />
     </View>
   );
@@ -38,8 +37,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    flex: 1,  
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },
