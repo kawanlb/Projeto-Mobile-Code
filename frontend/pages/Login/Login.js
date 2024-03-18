@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import TextInput from './input';
+import GradientText from '../../components/GradientText';
+import LoginButton from '../../components/LoginButton';
+import ForgotPassword from '../../components/ForgotPassword';
 
-const TelaCadastro = () => {
+const Login = ({ navigateToSignUp }) => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -20,19 +23,14 @@ const TelaCadastro = () => {
           source={require('../../assets/images/Logo.jpeg')}
           style={styles.logo}
         />
+        <GradientText style={styles.gradientText}>Amigo de quatro patas</GradientText>
       </View>
       <View style={styles.inputContainer}>
+        <LoginButton navigateToSignUp={navigateToSignUp}></LoginButton>
         <TextInput
-          placeholder="Nome"
+          placeholder="Nome de usuário ou email"
           value={nome}
           onChangeText={setNome}
-          style={styles.input}
-        />
-        <TextInput
-          placeholder="E-mail"
-          value={email}
-          onChangeText={setEmail}
-          keyboardType="email-address"
           style={styles.input}
         />
         <TextInput
@@ -40,13 +38,14 @@ const TelaCadastro = () => {
           value={senha}
           onChangeText={setSenha}
           secureTextEntry
-          style={styles.input}
+          style={styles.inputSenha}
         />
+        <ForgotPassword></ForgotPassword>
         <TouchableOpacity
           style={styles.button}
           onPress={handleSignUp}
         >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -69,7 +68,9 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginTop: 60,
-    width: 300,
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center'
   },
   input: {
     width: '100%',
@@ -79,18 +80,36 @@ const styles = StyleSheet.create({
     marginBottom: 25,
     paddingHorizontal: 10,
     fontSize: 16,
+    borderRadius: 7
+  },
+  inputSenha: {
+    width: '100%',
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    paddingHorizontal: 10,
+    fontSize: 16,
+    marginBottom: 5,
+    borderRadius: 7
   },
   button: {
     backgroundColor: '#0BACFE',
     paddingVertical: 12,
     paddingHorizontal: 24,
-    borderRadius: 5,
+    borderRadius: 5, 
+    width:'75%',
+    marginTop: 10,
+    borderRadius: 7
   },
   buttonText: {
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
   },
+  gradientText: {
+    fontSize: 38,
+    fontWeight: 'bold',
+  }
 });
 
-export default TelaCadastro;
+export default Login;

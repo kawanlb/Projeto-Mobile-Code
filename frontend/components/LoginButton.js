@@ -1,29 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { Text, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-web";
 
-const LoginButton = () => {
+const LoginButton = ({ navigateToSignUp }) => {
+
   return (
     <>
-      <div style={styles.containerr}>
+      <TouchableOpacity style={styles.container}>
         <Text style={styles.textLogin}>Login</Text>
-        <Text>ou <a href="www.example.com">crie sua conta</a></Text>
-      </div>
+        <Text>ou <Text style={styles.linkCreateAccount} onClick={navigateToSignUp}>crie sua conta</Text></Text>
+      </TouchableOpacity>
     </>
   );
 };
 
 const styles = StyleSheet.create({
-  containerr: {
+  container: {
     display:'flex',
     flexDirection: 'column',
     backgroundColor: "#fff",
     alignItems: 'start',
     justifyContent: "start",
-    width: '100%'
+    width: '75%',
+    marginBottom: 10
   },
   textLogin:{
     fontSize:24,
     fontFamily:'Outfit-Medium'
+  },
+  linkCreateAccount:{
+    color: '#53ACFF'
   }
 });
 
