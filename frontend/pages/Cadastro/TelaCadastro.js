@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
-import TextInput from './input';
+import TextInput from '../../components/input';
 
 const TelaCadastro = () => {
   const [nome, setNome] = useState('');

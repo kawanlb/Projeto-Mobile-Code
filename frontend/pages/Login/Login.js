@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
-import TextInput from './input';
+import TextInput from '../../components/input';
 import GradientText from '../../components/GradientText';
 import LoginButton from '../../components/LoginButton';
 import ForgotPassword from '../../components/ForgotPassword';
