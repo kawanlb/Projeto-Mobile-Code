@@ -1,0 +1,35 @@
+/* style.css */
+
+.container {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5FCFF;
+  }
+  
+  .inputContainer {
+    border-bottom-color: #F5FCFF;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    border-bottom-width: 1px;
+    width: 250px;
+    height: 45px;
+    margin-bottom: 20px;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .inputs {
+    height: 45px;
+    margin-left: 16px;
+    border-bottom-color: #FFFFFF;
+    flex: 1;
+  }
+  
+  .inputIcon {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    justify-content: center;
+  }
+  
