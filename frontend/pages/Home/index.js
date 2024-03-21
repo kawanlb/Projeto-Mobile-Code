@@ -2,7 +2,10 @@ import { useState } from 'react';
 import { Text, View, ScrollView, StyleSheet, Image } from 'react-native';
 import BotaoFiltro from '../../components/BotaoFiltro';
 import CardAnimal from '../../components/CardAnimal';
-import FiltroSimbolo from '../../assets/img/filtro.png';
+import GaleriaDeImagens from '../../components/GaleriaDeImagens';
+import BarraPesquisa from '../../components/BarraPesquisa';
+
+import FiltroSimbolo from '../../assets/images/filtro.png';
 
 const Home = () => {
     const [selectedFilter, setSelectedFilter] = useState("Todos");
@@ -13,6 +16,10 @@ const Home = () => {
 
     return (
         <View>
+            <View>
+                <GaleriaDeImagens/>
+                <BarraPesquisa/>
+            </View>
             <Text style={styles.titulo}>Categorias</Text>
             <ScrollView horizontal={true}>
                 <BotaoFiltro title="Todos" isSelected={selectedFilter === "Todos"} onPress={() => handleFilterSelection("Todos")} />
