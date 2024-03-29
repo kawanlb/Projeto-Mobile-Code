@@ -4,7 +4,7 @@ import { inputStyles } from '../pages/Cadastro/style'; // Importa os estilos do 
 
 const TextInput = ({ placeholder, style, ...rest }) => {
   return (
-    <View style={inputStyles.inputContainer}>
+    <View>
       <RNTextInput
         placeholder={placeholder}
         placeholderTextColor={inputStyles.placeholderText.color} // Usa a cor definida no estilo para o placeholder
