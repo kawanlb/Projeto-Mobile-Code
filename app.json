@@ -22,7 +22,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./frontend/assets/images/Logo.png"
     },
     "plugins": [
       [

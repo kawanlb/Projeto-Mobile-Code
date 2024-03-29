@@ -1,14 +1,22 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from "react-native-web";
 
-const LoginButton = ({ navigateToSignUp }) => {
+const LoginButton = () => {
+  
+  const navigation = useNavigation();
+
+  const handleSignup = () => {
+    // Navegue para a tela de cadastro de name "Signup"
+    navigation.navigate('Sign up');
+  };
 
   return (
     <>
       <TouchableOpacity style={styles.container}>
         <Text style={styles.textLogin}>Login</Text>
-        <Text>ou <Text style={styles.linkCreateAccount} onClick={navigateToSignUp}>crie sua conta</Text></Text>
+        <Text>ou <Text style={styles.linkCreateAccount} onPress={handleSignup}>crie sua conta</Text></Text>
       </TouchableOpacity>
     </>
   );

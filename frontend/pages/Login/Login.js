@@ -4,16 +4,20 @@ import TextInput from '../../components/LoginInput';
 import GradientText from '../../components/GradientText';
 import LoginButton from '../../components/LoginButton';
 import ForgotPassword from '../../components/ForgotPassword';
+import { useNavigation } from '@react-navigation/native';
 
-const Login = ({ navigateToSignUp }) => {
+const Login = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSignUp = () => {
+  const navigation = useNavigation();
+  
+  const handleSignin = () => {
     console.log('Nome:', nome);
     console.log('E-mail:', email);
     console.log('Senha:', senha);
+    navigation.navigate('Home');
   };
 
   return (
@@ -26,7 +30,7 @@ const Login = ({ navigateToSignUp }) => {
         <GradientText style={styles.gradientText}>Amigo de quatro patas</GradientText>
       </View>
       <View style={styles.inputContainer}>
-        <LoginButton navigateToSignUp={navigateToSignUp}></LoginButton>
+        <LoginButton></LoginButton>
         <TextInput
           placeholder="Nome de usuário ou email"
           value={nome}
@@ -43,7 +47,7 @@ const Login = ({ navigateToSignUp }) => {
         <ForgotPassword></ForgotPassword>
         <TouchableOpacity
           style={styles.button}
-          onPress={handleSignUp}
+          onPress={handleSignin}
         >
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
@@ -56,6 +60,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
+    backgroundColor: '#FFFFFF',
   },
   logoContainer: {
     alignItems: 'center',
