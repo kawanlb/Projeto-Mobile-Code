@@ -4,16 +4,20 @@ import TextInput from '../../components/LoginInput';
 import GradientText from '../../components/GradientText';
 import LoginButton from '../../components/LoginButton';
 import ForgotPassword from '../../components/ForgotPassword';
+import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSignUp = () => {
+  const navigation = useNavigation();
+  
+  const handleSignin = () => {
     console.log('Nome:', nome);
     console.log('E-mail:', email);
     console.log('Senha:', senha);
+    navigation.navigate('Home');
   };
 
   return (
@@ -43,7 +47,7 @@ const Login = () => {
         <ForgotPassword></ForgotPassword>
         <TouchableOpacity
           style={styles.button}
-          onPress={handleSignUp}
+          onPress={handleSignin}
         >
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>

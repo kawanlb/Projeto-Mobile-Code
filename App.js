@@ -10,7 +10,7 @@ import TelaCadastro from "./frontend/pages/Cadastro/TelaCadastro";
 import Home from "./frontend/pages/Home/";
 
 export default function App() {
-  // const [currentScreen, setCurrentScreen] = useState("Login");
+ 
   const Stack = createStackNavigator();
 
   const [fontsLoaded, fontError] = useFonts({
@@ -21,11 +21,6 @@ export default function App() {
     "Actor": require("../Projeto-Mobile-Code/frontend/assets/fonts/Actor-Regular.ttf"),
   });
 
-  // const onLayoutRootView = useCallback(async () => {
-  //   if (fontsLoaded || fontError) {
-  //     await SplashScreen.hideAsync();
-  //   }
-  // }, [fontsLoaded, fontError]);
 
   if (!fontsLoaded && !fontError) {
     return null;
@@ -45,13 +40,6 @@ export default function App() {
     
     </NavigationContainer>
     
-    // <View style={styles.container} onLayout={onLayoutRootView}>
-    //   {currentScreen === "Login" && (
-    //     <Login navigateToSignup={navigateToSignup} />
-    //   )}
-    //   {currentScreen === "Signup" && <TelaCadastro />}
-    //   <StatusBar style="auto" />
-    // </View>
   );
 }
 
