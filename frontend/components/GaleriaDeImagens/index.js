@@ -69,7 +69,8 @@ const GaleriaDeImagens = () => {
   };
   const styles = StyleSheet.create({
     galeriaDeImagens: {
-      marginVertical: 5,
+      marginVertical: 20,
+      marginLeft: 10,
     },
     imagem: {
       height: 180,

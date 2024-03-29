@@ -16,6 +16,9 @@ export default function App() {
   const [fontsLoaded, fontError] = useFonts({
     "Ribeye-Regular": require("../Projeto-Mobile-Code/frontend/assets/fonts/Ribeye-Regular.ttf"),
     "Outfit-Medium": require("../Projeto-Mobile-Code/frontend/assets/fonts/Outfit-Medium.ttf"),
+    "Roboto-Regular": require("../Projeto-Mobile-Code/frontend/assets/fonts/Roboto-Regular.ttf"),
+    "Comfortaa-Regular": require("../Projeto-Mobile-Code/frontend/assets/fonts/Comfortaa-Regular.ttf"),
+    "Actor": require("../Projeto-Mobile-Code/frontend/assets/fonts/Actor-Regular.ttf"),
   });
 
   // const onLayoutRootView = useCallback(async () => {

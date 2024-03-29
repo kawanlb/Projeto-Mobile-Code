@@ -19,9 +19,9 @@ barraDePesquisa: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F7F7F8',
-    padding: 10,
+    padding: 7,
     borderRadius: 30,
-    marginTop: 5,
+    margin: 10,
   },
   input: {
     color: '#6F6F6F',
@@ -29,6 +29,8 @@ barraDePesquisa: {
     padding: 8,
     borderRadius: 20,
     marginRight: 10,
+    fontSize: 17,
+    fontFamily: 'Outfit-Medium',
   },
 });
 

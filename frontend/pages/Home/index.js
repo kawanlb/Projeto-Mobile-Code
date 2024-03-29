@@ -15,7 +15,7 @@ const Home = () => {
     };
 
     return (
-        <View>
+        <View style={styles.container}>
             <View>
                 <GaleriaDeImagens/>
                 <BarraPesquisa/>
@@ -28,24 +28,39 @@ const Home = () => {
                 <BotaoFiltro title="Aves" isSelected={selectedFilter === "Aves"} onPress={() => handleFilterSelection("Aves")} />
                 <BotaoFiltro title="" img={FiltroSimbolo} isSelected={selectedFilter === "Simbolo"} onPress={() => handleFilterSelection("Simbolo")} />
             </ScrollView>
-            <View style={styles.cardAnimaisContainer}>
-                <CardAnimal nome="Teste" idade="2 anos" genero="M" img="https://w0.peakpx.com/wallpaper/974/215/HD-wallpaper-lindo-cachorro-coleira-bonito-cachorro-animal.jpg" />
-                <CardAnimal nome="Teste" idade="2 anos" genero="F" img="https://w0.peakpx.com/wallpaper/974/215/HD-wallpaper-lindo-cachorro-coleira-bonito-cachorro-animal.jpg" />
-            </View>
+        
+                <View style={styles.cardAnimaisContainer}>
+                    <CardAnimal nome="Lupy" idade="2 anos" genero="M" img="https://w0.peakpx.com/wallpaper/974/215/HD-wallpaper-lindo-cachorro-coleira-bonito-cachorro-animal.jpg" />
+                    <CardAnimal nome="Puppy" idade="1 ano" genero="F" img="https://w0.peakpx.com/wallpaper/974/215/HD-wallpaper-lindo-cachorro-coleira-bonito-cachorro-animal.jpg" />
+                    <CardAnimal nome="Docinho" idade="5 anos" genero="F" img="https://w0.peakpx.com/wallpaper/974/215/HD-wallpaper-lindo-cachorro-coleira-bonito-cachorro-animal.jpg" />
+                    
+                </View>
+        
+            
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     titulo: {
-        marginLeft: 8,
-        fontFamily: 'Comfortaa',
-        fontSize: 25
+        marginBottom: 10,
+        marginLeft: 10,
+        marginTop: 5,
+        fontSize: 25,
+        fontFamily: 'Comfortaa-Regular',
     },
     cardAnimaisContainer: {
+        justifyContent: 'flex-start',
+        alignContent: 'flex-start',
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
+        flexWrap: 'wrap', // Permite que os itens quebrem para a próxima linha
+ 
+        
+    },
+    container:{
+        height: '100%',
+        width: '100%',
+        backgroundColor:'#FFFF',
     },
 })
 

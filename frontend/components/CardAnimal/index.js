@@ -24,7 +24,7 @@ const CardAnimal=({nome, idade, genero, img})=>{
             />
             <LinearGradient
             style={styles.textoContainer1}
-            colors={['transparent', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}
+            colors={['transparent', 'rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 1)']}
             start={[0, 0]}
             end={[0, 1]}
             >
@@ -44,16 +44,19 @@ const CardAnimal=({nome, idade, genero, img})=>{
 
 const styles = StyleSheet.create({
     container:{
+      marginHorizontal: '10px',
       borderRadius: '20%',
-      marginVertical: '20px',
+      marginVertical: '10px',
       shadowColor: '#000',
       shadowOffset: {width: 0, height: 4},
       shadowOpacity: 0.2,
       shadowRadius: 2,
       elevation: 3,
+      width: '11em',
+      height: '12em',
+      
     },
     card: {
-      flex:'1',
       width: '11em',
       height: '12em',
       borderRadius: '20%'
@@ -68,6 +71,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:'20px',
         paddingVertical: '15px',
         bottom: 0,
+        fontFamily: 'Roboto-Regular',
         
     },
     textoContainer2:{

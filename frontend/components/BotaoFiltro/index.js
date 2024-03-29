@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         elevation: 3,
         height: 63,
         width: 63,
-        margin: 7,
+        margin: 8,
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -31,16 +31,16 @@ const styles = StyleSheet.create({
         backgroundColor: '#0BACFE'
     },
     textoBotao: {
-        fontFamily: 'Actor',
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: 'Comfortaa-Regular',
     },
     textoBotaoSelecionado: {
         color: 'white'
     },
     imagemBotao: {
         marginTop: 5,
-        width: 28,
-        height: 28,
+        width: 30,
+        height: 30,
     }
 });
 

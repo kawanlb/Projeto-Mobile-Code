@@ -12,7 +12,7 @@ export const telaCadastroStyles = StyleSheet.create({
     marginTop: 50,
   },
   title: {
-    fontFamily: 'Outfit-Medium.ttf',
+    fontFamily: 'Outfit-Medium',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 28,
@@ -46,8 +46,6 @@ export const telaCadastroStyles = StyleSheet.create({
     paddingVertical: 12,
     paddingHorizontal: 24,
     borderRadius: 5,
-    borderWidth: 2,
-    borderColor: 'black',
     marginTop: 20, // Ajustado o espaçamento entre o input e o botão
   },
   buttonText: {
@@ -62,6 +60,8 @@ export const telaCadastroStyles = StyleSheet.create({
     width: 20,
     height: 20,
     left: 230, // Ajuste este valor conforme necessário para alinhar à direita
+    position: 'relative',
+    bottom: 38,
   }
 });
 
