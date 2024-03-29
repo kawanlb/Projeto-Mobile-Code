@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import TextInput from '../../components/input';
+import { useNavigation } from '@react-navigation/native';
 
 const TelaCadastro = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSignUp = () => {
+  const navigation = useNavigation();
+
+  const handleHome = () => {
+    // Navegue para a tela de cadastro de name "Home"
+    navigation.navigate('Home');
+  };
+  const handleSignup = () => {
     console.log('Nome:', nome);
     console.log('E-mail:', email);
     console.log('Senha:', senha);
@@ -44,7 +51,7 @@ const TelaCadastro = () => {
         />
         <TouchableOpacity
           style={styles.button}
-          onPress={handleSignUp}
+          onPress={handleHome}
         >
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>

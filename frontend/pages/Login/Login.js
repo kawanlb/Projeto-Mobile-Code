@@ -5,12 +5,12 @@ import GradientText from '../../components/GradientText';
 import LoginButton from '../../components/LoginButton';
 import ForgotPassword from '../../components/ForgotPassword';
 
-const Login = ({ navigateToSignUp }) => {
+const Login = () => {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
-  const handleSignUp = () => {
+  const handleSignup = () => {
     console.log('Nome:', nome);
     console.log('E-mail:', email);
     console.log('Senha:', senha);
@@ -26,7 +26,7 @@ const Login = ({ navigateToSignUp }) => {
         <GradientText style={styles.gradientText}>Amigo de quatro patas</GradientText>
       </View>
       <View style={styles.inputContainer}>
-        <LoginButton navigateToSignUp={navigateToSignUp}></LoginButton>
+        <LoginButton onPress={handleSignup}></LoginButton>
         <TextInput
           placeholder="Nome de usuário ou email"
           value={nome}
@@ -43,7 +43,7 @@ const Login = ({ navigateToSignUp }) => {
         <ForgotPassword></ForgotPassword>
         <TouchableOpacity
           style={styles.button}
-          onPress={handleSignUp}
+          onPress={handleSignup}
         >
           <Text style={styles.buttonText}>Log in</Text>
         </TouchableOpacity>
