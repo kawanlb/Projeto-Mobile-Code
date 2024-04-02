@@ -8,6 +8,7 @@ import React, { useCallback, useState } from "react";
 import Login from "./frontend/pages/Login/Login";
 import TelaCadastro from "./frontend/pages/Cadastro/TelaCadastro";
 import Home from "./frontend/pages/Home/";
+import AboutMeScreen from './frontend/pages/ABOUT/AboutScreen';
 
 export default function App() {
  
@@ -30,6 +31,7 @@ export default function App() {
     //Criação da navegação entre telas
     <NavigationContainer>
       <Stack.Navigator>
+       <Stack.Screen name="ABOUT" component={AboutMeScreen}/>
         <Stack.Screen name="Log in" component={Login}/>
         <Stack.Screen name="Sign up" component={TelaCadastro}/>
         <Stack.Screen name="Home" component={Home}  
