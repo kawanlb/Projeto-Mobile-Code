@@ -37,7 +37,7 @@ const TelaCadastro = () => {
         />
       </View>
       <View style={styles.inputContainer}>
-        <Text style={styles.title}>Crie Sua Conta</Text>
+        <Text style={styles.title}>Crie Seu Cadastro</Text>
 
         <Text style={styles.label}>Usuário:</Text>
         <TextInput
@@ -69,7 +69,7 @@ const TelaCadastro = () => {
           style={styles.button}
           onPress={handleSignUp}
         >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.buttonText}>Cadastre-se</Text>
         </TouchableOpacity>
       </View>
     </View>

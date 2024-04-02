@@ -22,7 +22,7 @@ export const telaCadastroStyles = StyleSheet.create({
   container: {
     flex: 1,
     paddingHorizontal: 20,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#FDF7E4',
   },
   logoContainer: {
     alignItems: 'center',
@@ -32,7 +32,7 @@ export const telaCadastroStyles = StyleSheet.create({
     fontFamily: 'Outfit',
     fontStyle: 'normal',
     fontWeight: '700',
-    fontSize: 28,
+    fontSize: 24,
     lineHeight: 30,
     color: '#000000',
     marginBottom: 50,
