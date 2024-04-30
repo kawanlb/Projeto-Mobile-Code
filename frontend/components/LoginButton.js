@@ -3,7 +3,7 @@ import { Text, StyleSheet } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from "react-native-web";
 
-const LoginButton = () => {
+const LoginButton = ({title, text, or }) => {
   
   const navigation = useNavigation();
 
@@ -15,8 +15,8 @@ const LoginButton = () => {
   return (
     <>
       <TouchableOpacity style={styles.container}>
-        <Text style={styles.textLogin}>Login</Text>
-        <Text>ou <Text style={styles.linkCreateAccount} onPress={handleSignup}>crie sua conta</Text></Text>
+        <Text style={styles.textLogin}>{title}</Text>
+        <Text>{or} <Text style={styles.linkCreateAccount} onPress={handleSignup}>{text}</Text></Text>
       </TouchableOpacity>
     </>
   );

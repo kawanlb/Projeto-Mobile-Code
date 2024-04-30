@@ -1,7 +1,7 @@
 import { TextInput, View, Button, StyleSheet, Pressable } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const BarraPesquisa = ()=>{
+const BarraPesquisa = ({text})=>{
 
     return(
         <View style={styles.barraDePesquisa}>
@@ -9,7 +9,7 @@ const BarraPesquisa = ()=>{
         <Icon name="search" size={20} color="#5BA9EF"/>
         </Pressable>
         
-        <TextInput style={styles.input} placeholder="Buscar animal..." />
+        <TextInput style={styles.input} placeholder={text + " ..."}/>
         </View>
     );
 };
