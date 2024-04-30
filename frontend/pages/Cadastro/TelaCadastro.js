@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import TextInput from '../../components/TextInput';
 import { telaCadastroStyles as styles } from '../Cadastro/style';
 import { validatePassword } from '../../utils/validatePassword'; 
 import { validateEmail } from '../../utils/validateEmail'; 
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
+import * as RNLocalize from 'react-native-localize';
+import i18n from '../../locales';
 
 const TelaCadastro = () => {
   const [nome, setNome] = useState('');
@@ -12,16 +15,23 @@ const TelaCadastro = () => {
   const [senha, setSenha] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const locale = RNLocalize.getLocales()[0].languageCode;
+    i18n.changeLanguage(locale);
+  }, []);
+
   const navigation = useNavigation();
 
   const handleSignup = () => {
     if (!validateEmail(email)) {
-      alert('Por favor, insira um email válido.');
+      alert(t('alertInvalidEmail'));
       return;
     }
 
     if (!validatePassword(senha)) {
-      alert('Por favor, insira uma senha forte.');
+      alert(t('alertInvalidPassword'));
       return;
     }
 
@@ -37,9 +47,9 @@ const TelaCadastro = () => {
         />
       </View>
       <View style={styles.inputContainer}>
-        <Text style={styles.title}>Crie Sua Conta</Text>
+        <Text style={styles.title}>{t('SignUp')}</Text>
 
-        <Text style={styles.label}>Usuário:</Text>
+        <Text style={styles.label}>{t('userPlaceHolder')}</Text>
         <TextInput
           placeholder="johndoe"
           value={nome}
@@ -47,7 +57,7 @@ const TelaCadastro = () => {
           style={styles.input}
         />
 
-        <Text style={styles.label}>Email:</Text>
+        <Text style={styles.label}>{t('emailPlaceHolder')}</Text>
         <TextInput
           placeholder="inbox@email.com"
           value={email}
@@ -57,7 +67,7 @@ const TelaCadastro = () => {
         />
 
         <View style={styles.passwordContainer}>
-          <Text style={styles.label}>Senha:</Text>
+          <Text style={styles.label}>{t('passwordPlaceHolder')}</Text>
           <View style={styles.passwordInputContainer}>
             <TextInput
               placeholder="***********"
@@ -82,7 +92,7 @@ const TelaCadastro = () => {
           style={styles.button}
           onPress={handleSignup}
         >
-          <Text style={styles.buttonText}>Cadastrar</Text>
+          <Text style={styles.buttonText}>{t('registerButtonLabel')}</Text>
         </TouchableOpacity>
       </View>
     </View>

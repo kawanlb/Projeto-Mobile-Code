@@ -1,17 +1,25 @@
-import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StyleSheet, View } from "react-native";
 import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import React, { useCallback, useState } from "react";
-import Login from "./frontend/pages/Login/Login";
+import React, { useEffect } from "react";
+import { useTranslation } from 'react-i18next';
+import * as RNLocalize from 'react-native-localize';
+import i18n from "./frontend/locales";
 import TelaCadastro from "./frontend/pages/Cadastro/TelaCadastro";
 import Home from "./frontend/pages/Home/";
+import Login from "./frontend/pages/Login/Login";
+
 
 export default function App() {
  
   const Stack = createStackNavigator();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    // Set the initial language based on device locale
+    const locale = RNLocalize.getLocales()[0].languageCode;
+    i18n.changeLanguage(locale);
+  }, []);
 
   const [fontsLoaded, fontError] = useFonts({
     "Ribeye-Regular": require("../Projeto-Mobile-Code/frontend/assets/fonts/Ribeye-Regular.ttf"),
@@ -21,7 +29,6 @@ export default function App() {
     "Actor": require("../Projeto-Mobile-Code/frontend/assets/fonts/Actor-Regular.ttf"),
   });
 
-
   if (!fontsLoaded && !fontError) {
     return null;
   }
@@ -30,7 +37,7 @@ export default function App() {
     //Criação da navegação entre telas
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Log in" component={Login}/>
+        <Stack.Screen name={t('login')} component={Login}/>
         <Stack.Screen name="Sign up" component={TelaCadastro}/>
         <Stack.Screen name="Home" component={Home}  
         options={{
@@ -42,20 +49,3 @@ export default function App() {
     
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "white",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  ribEyeRegular: {
-    fontFamily: "Ribeye-Regular",
-    fontSize: 20,
-  },
-  text: {
-    fontSize: 38,
-    fontWeight: "bold",
-  },
-});

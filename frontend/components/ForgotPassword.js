@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { StyleSheet, Text } from "react-native";
 
-const ForgotPassword = () => {
+const ForgotPassword = ({ buttonText}) => {
   return (
     <>
       <div style={styles.container}>
-        <Text style={styles.textLogin}>Esqueceu a senha?</Text>
+        <Text style={styles.textLogin}>{buttonText}</Text>
       </div>
     </>
   );

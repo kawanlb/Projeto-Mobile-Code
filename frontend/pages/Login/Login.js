@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity, Text } from 'react-native';
 import TextInput from '../../components/LoginInput';
 import GradientText from '../../components/GradientText';
 import LoginButton from '../../components/LoginButton';
 import ForgotPassword from '../../components/ForgotPassword';
 import { useNavigation } from '@react-navigation/native';
+import { useTranslation } from 'react-i18next';
+import * as RNLocalize from 'react-native-localize';
+import i18n from '../../locales';
+
 
 const Login = () => {
   const [nome, setNome] = useState('');
@@ -20,6 +24,14 @@ const Login = () => {
     navigation.navigate('Home');
   };
 
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    // Set the initial language based on device locale
+    const locale = RNLocalize.getLocales()[0].languageCode;
+    i18n.changeLanguage(locale);
+  }, []);
+
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -27,29 +39,29 @@ const Login = () => {
           source={require('../../assets/images/Logo.jpeg')}
           style={styles.logo}
         />
-        <GradientText style={styles.gradientText}>Amigo de quatro patas</GradientText>
+        <GradientText style={styles.gradientText}>{t('logo')}</GradientText>
       </View>
       <View style={styles.inputContainer}>
-        <LoginButton></LoginButton>
+        <LoginButton text={t('signup')} title={t('login')} or={t('or')}></LoginButton>
         <TextInput
-          placeholder="Nome de usuário ou email"
+          placeholder={t('emailPlaceHolder')}
           value={nome}
           onChangeText={setNome}
           style={styles.input}
         />
         <TextInput
-          placeholder="Senha"
+          placeholder={t('passwordPlaceHolder')}
           value={senha}
           onChangeText={setSenha}
           secureTextEntry
           style={styles.inputSenha}
         />
-        <ForgotPassword></ForgotPassword>
+        <ForgotPassword buttonText={t('forgotPassword')}></ForgotPassword>
         <TouchableOpacity
           style={styles.button}
           onPress={handleSignin}
         >
-          <Text style={styles.buttonText}>Log in</Text>
+          <Text style={styles.buttonText}>{t('login')}</Text>
         </TouchableOpacity>
       </View>
     </View>
